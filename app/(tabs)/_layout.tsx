@@ -1,29 +1,36 @@
 import { Tabs } from "expo-router"
-
 import Ionicons from "@expo/vector-icons/Ionicons"
 
 export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: "#ffd33d",
+        tabBarActiveTintColor: "#00ff88",
         headerStyle: {
-          backgroundColor: "#25292e"
+          backgroundColor: "#1a1a1a"
         },
         headerShadowVisible: false,
         headerTintColor: "#fff",
         tabBarStyle: {
-          backgroundColor: "#25292e"
+          backgroundColor: "#1a1a1a",
+          borderTopColor: "#333",
+          paddingBottom: 8,
+          paddingTop: 8,
+          height: 70
+        },
+        tabBarLabelStyle: {
+          fontSize: 12,
+          fontWeight: '600'
         }
       }}
     >
       <Tabs.Screen
         name="index"
         options={{
-          title: "Home",
+          title: "Workouts",
           tabBarIcon: ({ color, focused }) => (
             <Ionicons
-              name={focused ? "home-sharp" : "home-outline"}
+              name={focused ? "fitness" : "fitness-outline"}
               color={color}
               size={24}
             />
@@ -31,14 +38,38 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="about"
+        name="timer"
         options={{
-          title: "About",
+          title: "Timer",
           tabBarIcon: ({ color, focused }) => (
             <Ionicons
-              name={
-                focused ? "information-circle" : "information-circle-outline"
-              }
+              name={focused ? "timer" : "timer-outline"}
+              color={color}
+              size={24}
+            />
+          )
+        }}
+      />
+      <Tabs.Screen
+        name="progress"
+        options={{
+          title: "Progress",
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name={focused ? "stats-chart" : "stats-chart-outline"}
+              color={color}
+              size={24}
+            />
+          )
+        }}
+      />
+      <Tabs.Screen
+        name="profile"
+        options={{
+          title: "Profile",
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name={focused ? "person" : "person-outline"}
               color={color}
               size={24}
             />
